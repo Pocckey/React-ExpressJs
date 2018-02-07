@@ -1,0 +1,72 @@
+{
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+     "rules": {
+       "no-cond-assign": [
+         2,
+         "always"
+       ],
+       "no-extra-boolean-cast": 0,
+       "default-case": 2,
+       "eqeqeq": 2,
+       "no-case-declarations": 2,
+       "no-console": 1,
+       "no-else-return": 2,
+       "no-fallthrough": 2,
+       "no-redeclare": 2,
+       "no-unused-vars": 1,
+       "no-warning-comments": [
+         1,
+         {
+           "terms": [
+             "todo"
+           ],
+           "location": "start"
+         }
+       ],
+       "id-blacklist": [2,
+      "heading",
+      "small",
+      "medium",
+      "large"
+    ],
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-undefined": 0,
+    "no-unused-vars": 2,
+    "react/jsx-key": 2,
+    "prefer-template": 2,
+    "no-var": 2,
+    "prefer-const": 2,
+    "react/display-name": 0,
+    "react/prop-types": [
+      2,
+      {
+        "ignore": [
+          "children"
+        ]
+      }
+    ],
+    "import/named": 2,
+    "import/default": 2,
+    "import/namespace": 2
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "globals": {
+    "document": true,
+    "window": true
+  }
+}
