@@ -4,22 +4,15 @@ import logo from "./logo.svg";
 import "./App.css";
 
 export default class App extends Component {
-
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      call: []
-    }
+      call: [],
+    };
   }
 
-  componentDidMount(){
-    console.log("api call");
-    axios.get('/API').then((res)=>{
-        const title = res.data.title;
-        this.setState({call: title})
-      }).catch((err)=>{
-        console.log(err);
-      });
+  componentDidMount() {
+    this.ApiCall();
   }
   render() {
     return (
@@ -35,7 +28,15 @@ export default class App extends Component {
     );
   }
 
-  ApiCall = function(){
-  return
+  ApiCall() {
+    return axios
+      .get("/API")
+      .then(res => {
+        const title = res.data.title;
+        this.setState({ call: title });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 }
