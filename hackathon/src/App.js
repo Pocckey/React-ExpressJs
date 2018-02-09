@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
+import Child from "./components/TestDiv";
 
 export default class App extends Component {
   constructor() {
@@ -24,6 +25,7 @@ export default class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Child />
       </div>
     );
   }
@@ -37,6 +39,7 @@ export default class App extends Component {
       })
       .catch(err => {
         console.log(err);
+        throw new Error(err);
       });
   }
 }
