@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Child from "./components/TestDiv";
 
 export default class App extends Component {
@@ -39,7 +39,7 @@ export default class App extends Component {
       })
       .catch(err => {
         console.log(err);
-        throw new Error(err);
+        this.setState({ call: "NoAPI" });
       });
   }
 }
