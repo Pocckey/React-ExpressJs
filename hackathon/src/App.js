@@ -25,6 +25,7 @@ export default class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <p><Content/></p>
         <Child />
       </div>
     );
@@ -43,5 +44,10 @@ export default class App extends Component {
       });
   }
 }
-//deeerrrrrr
-//no dick
+
+class Content extends Component {
+  render()
+  return(
+    <p> HELLO WORLD BITCHES!!!</p>
+  );
+}
