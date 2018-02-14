@@ -2,24 +2,18 @@ import React, { Component } from "react";
 import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
+import Child from "./components/TestDiv";
 
 export default class App extends Component {
-
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      call: []
-    }
+      call: [],
+    };
   }
 
-  componentDidMount(){
-    console.log("api call");
-    axios.get('/API').then((res)=>{
-        const title = res.data.title;
-        this.setState({call: title})
-      }).catch((err)=>{
-        console.log(err);
-      });
+  componentDidMount() {
+    this.ApiCall();
   }
   render() {
     return (
@@ -31,11 +25,21 @@ export default class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Child />
       </div>
     );
   }
 
-  ApiCall = function(){
-  return
+  ApiCall() {
+    return axios
+      .get("/API")
+      .then(res => {
+        const title = res.data.title;
+        this.setState({ call: title });
+      })
+      .catch(err => {
+        console.log(err);
+        throw new Error(err);
+      });
   }
 }
