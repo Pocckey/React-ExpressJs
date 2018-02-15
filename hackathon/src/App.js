@@ -29,7 +29,8 @@ export default class App extends Component {
     );
   }
 
-  ApiCall() {
+  //TODO remove this
+  ExampleApiCall() {
     return axios
       .get("/API")
       .then(res => {

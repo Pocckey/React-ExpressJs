@@ -1,12 +1,2 @@
-@import "./vendors/vendor";
-
-@import "./base/color";
-@import "./base/typography";
-@import "./base/App";
-
-@import "./layout/header";
-
-@import "./pages/home";
-
-@import "./components/button";
-@import "./components/logo";
+@import "./base/_colorVariables";
+@import "./pages/App";
