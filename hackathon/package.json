@@ -47,8 +47,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "format": "prettier --trailing-comma all --write \"src/*.js\"",
+    "test": "npm run lint && node scripts/test.js --env=jsdom",
+    "format": "prettier --trailing-comma all --write \"src/*.{js,scss}\"",
     "prepush": "npm run lint",
     "precommit": "lint-staged",
     "lint": "eslint src test",
@@ -71,7 +71,7 @@
     "transform": {
       "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|mjs|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+      "^(?!.*\\.(js|jsx|mjs|scss|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
@@ -101,7 +101,7 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "src/**/*.{js,jsx,json,scss,css}": [
       "prettier --trailing-comma all --write",
       "git add"
     ]
@@ -112,6 +112,8 @@
     "babel-preset-react": "^6.24.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-react": "^7.6.1",
-    "lint-staged": "^6.1.0"
+    "lint-staged": "^6.1.0",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6"
   }
 }
