@@ -3,6 +3,9 @@ import axios from "axios";
 import logo from "./logo.svg";
 import "./App.css";
 import Child from "./components/TestDiv";
+import Map from "./components/map";
+
+const center = { lat: 59.95, lng: 30.33 };
 
 export default class App extends Component {
   constructor() {
@@ -13,7 +16,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.ApiCall();
+    //this.ApiCall();
   }
   render() {
     return (
@@ -26,6 +29,9 @@ export default class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Child />
+        <div className="map-container">
+          <Map center={center} zoom={11} />
+        </div>
       </div>
     );
   }
