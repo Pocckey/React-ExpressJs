@@ -24,6 +24,7 @@ export default class App extends Component {
         <p className="app-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <p><Content/></p>
         <Child />
       </div>
     );
@@ -42,4 +43,11 @@ export default class App extends Component {
         this.setState({ call: "NoAPI" });
       });
   }
+}
+
+class Content extends Component {
+  render()
+  return(
+    <p> HELLO WORLD BITCHES!!!</p>
+  );
 }
