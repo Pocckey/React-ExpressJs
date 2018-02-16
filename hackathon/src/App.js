@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import logo from "./img/logo.svg";
 import Child from "./components/TestDiv";
+import Header from "./components/Header";
 
 export default class App extends Component {
   constructor() {
@@ -18,6 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
+        <Header />
         <header className="app-header">
           <img src={logo} className="app-logo" alt="logo" />
           <h1 className="app-title">{this.state.call}</h1>
