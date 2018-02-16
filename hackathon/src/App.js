@@ -30,7 +30,7 @@ export default class App extends Component {
     );
   }
 
-  //TODO remove thisExample
+  //TODO remove this
   ApiCall() {
     return axios
       .get("/API")
