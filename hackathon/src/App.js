@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import logo from "./img/logo.svg";
 import Child from "./components/TestDiv";
+import PropTypes from "prop-types";
 
 export default class App extends Component {
   constructor() {
@@ -44,3 +45,8 @@ export default class App extends Component {
       });
   }
 }
+
+//Test Proptype declaration
+App.propTypes = {
+  logo: PropTypes.object,
+};
