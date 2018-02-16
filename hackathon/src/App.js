@@ -12,7 +12,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.ApiCall();
+    // Leaving this commented out for initialization API calls
+    //this.ApiCall();
   }
   render() {
     return (
@@ -30,7 +31,7 @@ export default class App extends Component {
   }
 
   //TODO remove this
-  ExampleApiCall() {
+  ApiCall() {
     return axios
       .get("/API")
       .then(res => {
