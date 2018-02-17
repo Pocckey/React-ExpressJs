@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 export default class LoginPage extends Component {
   constuctor() {
@@ -12,33 +13,37 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-        <label>
-          <b>Username</b>
-        </label>
-        <input type="text" placeholder="Enter Username" name="uname" required />
-        <label>
-          <b>Password</b>
-        </label>
-        <input
+      <Form>
+        <FormGroup>
+          <Label for="exampleEmail">Email</Label>
+          <Input
+            type="email"
+            name="email"
+            id="exampleEmail"
+            placeholder="with a placeholder"
+          />
+        </FormGroup>
+        <Label for="examplePassword">Password</Label>
+        <Input
           type="password"
-          placeholder="Enter Password"
-          name="psw"
-          required
+          name="password"
+          id="examplePassword"
+          placeholder="password placeholder"
         />
+        <FormGroup />
         <Route
           render={({ history }) => (
-            <button
+            <Button
               type="button"
               onClick={() => {
                 history.push("/ShelterPage");
               }}
             >
               Login
-            </button>
+            </Button>
           )}
         />
-      </div>
+      </Form>
     );
   }
 }
