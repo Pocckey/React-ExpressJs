@@ -3,10 +3,13 @@ import React, { Component } from "react";
 export default class Child extends Component {
   render() {
     return (
-      <div>
-        <span>is this a</span>
-        child component
-      </div>
+      <form>
+        <label>
+          Name:
+          <input type="text" name="name" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     );
   }
 }

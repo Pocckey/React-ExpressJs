@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import logo from "./img/logo.svg";
 import Child from "./components/TestDiv";
+import Example from "./components/Dropdown";
 
 export default class App extends Component {
   constructor() {
@@ -26,6 +27,7 @@ export default class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Child />
+        <Example />
       </div>
     );
   }
