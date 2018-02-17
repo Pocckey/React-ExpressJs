@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
-export default class Child extends Component {
+class Square extends Component {
   render() {
-    return (
-      <div>
-        <span>is this a</span>
-        child component
-      </div>
-    );
+    return <button className="Square" />;
+  }
+}
+
+export default class Calculator extends Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+
+  render() {
+    return <div />;
   }
 }
