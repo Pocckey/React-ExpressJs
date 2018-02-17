@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Button, TabPane, Row, Col } from "reactstrap";
+import { Button, TabPane } from "reactstrap";
 
 export default class MapsPage extends Component {
   constructor() {
@@ -10,24 +10,21 @@ export default class MapsPage extends Component {
   render() {
     return (
       <div>
-        <h1>MapsPage</h1>
-        <TabPane>
-          <Row>
-            <Col sm="6">
-              <Route
-                render={({ history }) => (
-                  <Button
-                    type="button"
-                    onClick={() => {
-                      history.push("/ShelterPage");
-                    }}
-                  >
-                    ShelterPage
-                  </Button>
-                )}
-              />
-            </Col>
-          </Row>
+        <h1 className="text-center">Home finder</h1>
+        <TabPane row>
+          <Route
+            render={({ history }) => (
+              <Button
+                className="mx-auto"
+                type="button"
+                onClick={() => {
+                  history.push("/ShelterPage");
+                }}
+              >
+                ShelterPage
+              </Button>
+            )}
+          />
         </TabPane>
       </div>
     );
