@@ -36,7 +36,7 @@ export default class LoginPage extends Component {
             <Button
               type="button"
               onClick={() => {
-                history.push("/ShelterPage");
+                history.push("/MapsPage");
               }}
             >
               Login

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import { Button, TabPane, Row, Col } from "reactstrap";
 
-export default class ShelterPage extends Component {
+export default class MapsPage extends Component {
   constructor() {
     super();
   }
@@ -10,7 +10,7 @@ export default class ShelterPage extends Component {
   render() {
     return (
       <div>
-        <h1>ShetlerPage</h1>
+        <h1>MapsPage</h1>
         <TabPane>
           <Row>
             <Col sm="6">
@@ -19,10 +19,10 @@ export default class ShelterPage extends Component {
                   <Button
                     type="button"
                     onClick={() => {
-                      history.push("/MapsPage");
+                      history.push("/ShelterPage");
                     }}
                   >
-                    MapsPage
+                    ShelterPage
                   </Button>
                 )}
               />
