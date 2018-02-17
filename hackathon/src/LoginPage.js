@@ -1,6 +1,15 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 export default class LoginPage extends Component {
+  constuctor() {
+    this.login = this.login.bind(this);
+  }
+
+  login() {
+    //authenticate yada yada...
+  }
+
   render() {
     return (
       <div>
@@ -17,7 +26,18 @@ export default class LoginPage extends Component {
           name="psw"
           required
         />
-        <button type="submit">Login</button>
+        <Route
+          render={({ history }) => (
+            <button
+              type="button"
+              onClick={() => {
+                history.push("/ShelterPage");
+              }}
+            >
+              Login
+            </button>
+          )}
+        />
       </div>
     );
   }
