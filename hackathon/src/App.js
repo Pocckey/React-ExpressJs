@@ -5,18 +5,17 @@ import "./App.css";
 import Child from "./components/TestDiv";
 import Map from "./components/map";
 
-const center = { lat: 59.95, lng: 30.33 };
-
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       call: [],
+      data: [],
     };
   }
 
   componentDidMount() {
-    //this.ApiCall();
+    this.ApiCall();
   }
   render() {
     return (
@@ -30,7 +29,7 @@ export default class App extends Component {
         </p>
         <Child />
         <div className="map-container">
-          <Map center={center} zoom={11} />
+          <Map shelters={this.state.data} />
         </div>
       </div>
     );
@@ -38,10 +37,9 @@ export default class App extends Component {
 
   ApiCall() {
     return axios
-      .get("/API")
+      .get("/shelter")
       .then(res => {
-        const title = res.data.title;
-        this.setState({ call: title });
+        this.setState({ data: res.data });
       })
       .catch(err => {
         console.log(err);
