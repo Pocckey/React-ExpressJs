@@ -10,13 +10,14 @@ export default class ShelterPage extends Component {
   render() {
     return (
       <div>
-        <h1>ShetlerPage</h1>
+        <h1 className="text-center">Shetlers</h1>
         <TabPane>
           <Row>
             <Col sm="6">
               <Route
                 render={({ history }) => (
                   <Button
+                    className="mx-auto"
                     type="button"
                     onClick={() => {
                       history.push("/MapsPage");

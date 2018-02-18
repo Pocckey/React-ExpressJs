@@ -13,36 +13,47 @@ export default class LoginPage extends Component {
 
   render() {
     return (
-      <Form>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
+      <Form style={{ marginTop: 200 }}>
+        <h1 className="text-center"> Home Shelter Finder </h1>
+        <FormGroup row style={{ marginTop: 50 }}>
+          <Label className="text-center col-md-12" for="exampleEmail">
+            Email
+          </Label>
           <Input
+            className="col-md-2 mx-auto"
             type="email"
             name="email"
             id="exampleEmail"
-            placeholder="with a placeholder"
+            placeholder="Enter Email"
           />
         </FormGroup>
-        <Label for="examplePassword">Password</Label>
-        <Input
-          type="password"
-          name="password"
-          id="examplePassword"
-          placeholder="password placeholder"
-        />
-        <FormGroup />
-        <Route
-          render={({ history }) => (
-            <Button
-              type="button"
-              onClick={() => {
-                history.push("/MapsPage");
-              }}
-            >
-              Login
-            </Button>
-          )}
-        />
+        <FormGroup row>
+          <Label className="text-center col-md-12" for="examplePassword">
+            Password
+          </Label>
+          <Input
+            className="col-md-2 mx-auto"
+            type="password"
+            name="password"
+            id="examplePassword"
+            placeholder="Enter password"
+          />
+        </FormGroup>
+        <FormGroup row>
+          <Route
+            render={({ history }) => (
+              <Button
+                className="mx-auto"
+                type="button"
+                onClick={() => {
+                  history.push("/MapsPage");
+                }}
+              >
+                Login
+              </Button>
+            )}
+          />
+        </FormGroup>
       </Form>
     );
   }
