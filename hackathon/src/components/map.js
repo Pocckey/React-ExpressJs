@@ -12,9 +12,7 @@ export default class Map extends Component {
     this.onMarkerClick = this.onMarkerClick.bind(this);
   }
 
-  onMarkerClick(e) {
-    console.log(e.text);
-  }
+  onMarkerClick() {}
 
   render() {
     const defaultProps = {
@@ -29,7 +27,7 @@ export default class Map extends Component {
         lat={marker.lat}
         lng={marker.lng}
         vacancy={marker.unoccupiedRooms}
-        onChildClick={this.onMarkerClick}
+        onChildClick={this.onMarkerClick(this)}
       />
     ));
 
