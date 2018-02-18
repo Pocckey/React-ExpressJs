@@ -17,7 +17,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="app">
-        <Header />
         <header className="app-header">
           <img src={logo} className="app-logo" alt="logo" />
           <h1 className="app-title">{this.state.call}</h1>
