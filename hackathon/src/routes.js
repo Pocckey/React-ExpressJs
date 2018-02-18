@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import App from "./App";
+import LoginPage from "./LoginPage";
+import ShelterPage from "./ShelterPage";
+import MapsPage from "./MapsPage";
 
 export default class router extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" component={App} />
-          <Route path="/Home" component={App} />
+          <Route exact path="/" component={LoginPage} />
+          <Route path="/ShelterPage" component={ShelterPage} />
+          <Route path="/MapsPage" component={MapsPage} />
         </Switch>
       </Router>
     );

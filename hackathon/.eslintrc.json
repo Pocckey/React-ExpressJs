@@ -39,14 +39,6 @@
     "no-var": 2,
     "prefer-const": 2,
     "react/display-name": 0,
-    "react/prop-types": [
-      2,
-      {
-        "ignore": [
-          "children"
-        ]
-      }
-    ],
     "import/named": 2,
     "import/default": 2,
     "import/namespace": 2
