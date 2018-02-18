@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import logo from "./img/logo.svg";
-import Child from "./components/TestDiv";
-import Example from "./components/Dropdown";
+import CheckinForm from "./components/CheckinForm";
 
 export default class App extends Component {
   constructor() {
@@ -26,8 +25,7 @@ export default class App extends Component {
         <p className="app-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Child />
-        <Example />
+        <CheckinForm />
       </div>
     );
   }
