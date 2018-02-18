@@ -113,18 +113,18 @@ export default class CheckinForm extends Component {
                 </DropdownMenu>
               </Dropdown>
               <h3 className="text-center" style={{ marginTop: 70 }}>
-                {" "}
-                Please select the number of attendees{" "}
+                &nbsp;Please select the number of attendees&nbsp;
               </h3>
               <div className="text-center" style={{ marginTop: 80 }}>
+                <span>&nbsp;Adding occupants&nbsp;</span>
                 <Button onClick={() => this.roomInput(1)}> + </Button>
-                <span>{this.state.roomInput}</span>
+                <span>&nbsp;{this.state.roomInput}&nbsp;</span>
                 <Button onClick={() => this.roomInput(-1)}> - </Button>
+                <span>&nbsp;Occupants leaving&nbsp;</span>
               </div>
               <div className="text-center" style={{ marginTop: 100 }}>
                 <Button onClick={this.onSubmit} value="Submit">
-                  {" "}
-                  Submit{" "}
+                  &nbsp;Submit&nbsp;
                 </Button>
               </div>
             </FormGroup>
