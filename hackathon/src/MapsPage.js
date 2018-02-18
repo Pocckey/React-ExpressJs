@@ -14,7 +14,7 @@ export default class MapsPage extends Component {
     };
   }
 
-  componentMount() {
+  componentDidMount() {
     this.ApiCall();
   }
 

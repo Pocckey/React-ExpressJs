@@ -62,6 +62,9 @@ export default class CheckinForm extends Component {
 
         .then(() => {
           console.log("Working");
+          this.setState({
+            roomInput: 0,
+          });
         })
 
         .catch(() => {
