@@ -12,7 +12,9 @@ export default class Marker extends Component {
   render() {
     return (
       <div style={greatPlaceStyle}>
-        {this.props.text}({this.props.vacancy})
+        <span style={{ marginTop: -10, marginLeft: 6, position: "absolute" }}>
+          {this.props.text}({this.props.vacancy})
+        </span>
       </div>
     );
   }

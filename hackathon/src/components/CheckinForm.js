@@ -4,8 +4,6 @@ import {
   Button,
   Form,
   FormGroup,
-  Label,
-  Input,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -64,6 +62,9 @@ export default class CheckinForm extends Component {
 
         .then(() => {
           console.log("Working");
+          this.setState({
+            roomInput: 0,
+          });
         })
 
         .catch(() => {
@@ -96,13 +97,13 @@ export default class CheckinForm extends Component {
         {this.state.data[0] && (
           <div>
             <FormGroup>
-              <Label>
-                Name:
-                <Input type="text" name="name" />
-              </Label>
-            </FormGroup>
-            <FormGroup>
-              <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+              <h3 className="text-center"> Please select your location </h3>
+              <Dropdown
+                className="text-center"
+                style={{ marginTop: 60 }}
+                isOpen={this.state.dropdownOpen}
+                toggle={this.toggle}
+              >
                 <DropdownToggle caret>Location</DropdownToggle>
                 <DropdownMenu>
                   {this.state.data.map(i => {
@@ -114,16 +115,22 @@ export default class CheckinForm extends Component {
                   })}
                 </DropdownMenu>
               </Dropdown>
+              <h3 className="text-center" style={{ marginTop: 70 }}>
+                &nbsp;Please select the number of attendees&nbsp;
+              </h3>
+              <div className="text-center" style={{ marginTop: 80 }}>
+                <span>&nbsp;Adding occupants&nbsp;</span>
+                <Button onClick={() => this.roomInput(1)}> + </Button>
+                <span>&nbsp;{this.state.roomInput}&nbsp;</span>
+                <Button onClick={() => this.roomInput(-1)}> - </Button>
+                <span>&nbsp;Occupants leaving&nbsp;</span>
+              </div>
+              <div className="text-center" style={{ marginTop: 100 }}>
+                <Button onClick={this.onSubmit} value="Submit">
+                  &nbsp;Submit&nbsp;
+                </Button>
+              </div>
             </FormGroup>
-
-            <Button onClick={() => this.roomInput(1)}> + </Button>
-            <span>{this.state.roomInput}</span>
-            <Button onClick={() => this.roomInput(-1)}> - </Button>
-
-            <Button onClick={this.onSubmit} value="Submit">
-              {" "}
-              Submit{" "}
-            </Button>
           </div>
         )}
       </Form>
